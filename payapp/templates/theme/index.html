@@ -1,0 +1,30 @@
+{% extends 'theme/base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    {% if book %}
+      {% for b in book %}
+          <div class="col-md-4">
+            <img src="{{ b.book_image }}" class="img-fluid" alt="">
+            <h2>&#8358; {{ b.price }}</h2>
+            <a href="{% url 'book_detail' b.id %}" class="btn btn-primary">Readmore</a>
+          </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock%}

@@ -1,0 +1,35 @@
+{% extends 'theme/base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      {% if detail %}
+          <img src="{{ detail.book_image }}" class="img-fluid" alt="">
+          <h2>&#8358; {{ detail.price }}</h2>
+          <p>
+            {{ detail.description }}
+          </p>
+          <a href="{% url 'checkout_pay' detail.id %}" class="btn btn-warning">Pay</a>
+      {% endif %}
+      
+     
+      
+    </div>
+   
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock%}
